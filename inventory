@@ -1,0 +1,37 @@
+---
+sites:
+  children:
+    sam-gpfs:
+      hosts:
+        10.10.214.14[1:8]:
+    
+    sam-viz:
+      children:
+        kvm:
+          hosts:
+            10.10.215.22:
+
+        app:
+          hosts:
+            10.10.215.3[0:2]:
+
+        coder:
+          hosts:
+            10.10.215.[35:40]:
+
+        db:
+          hosts:
+            10.10.215.4[3:4]:
+
+        wfe:
+          hosts:
+            10.10.215.41:
+
+        solr:
+          hosts:
+            10.10.215.42:
+
+        web:
+          hosts:
+            10.10.215.3[3:4]:
+...            
