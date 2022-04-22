@@ -1,37 +1,92 @@
----
-sites:
-  children:
-    sam-gpfs:
-      hosts:
-        10.10.214.14[1:8]:
+[sites:children]
+randburg
+samrand
+
+[randburg:children]
+#rnb_kvm
+rnb_app
+rnb_coder
+rnb_db
+rnb_wfe
+rnb_solr
+rnb_web
+rnb_dart
+rnb_tac
+
+[samrand:children]
+sam_gpfs
+sam_kvm
+sam_app
+sam_coder
+sam_db
+sam_wfe
+sam_solr
+sam_web
+
+#[subscription]
+#10.10.9.41
+#10.10.9.161
+#10.10.9.25
+#10.10.9.122
+#10.10.9.79
+#10.10.215.30
+#10.10.215.37
+#10.10.215.43
+#10.10.215.34
+#10.10.214.143
+
+[sam_gpfs]
+10.10.214.14[1:8]
     
-    sam-viz:
-      children:
-        kvm:
-          hosts:
-            10.10.215.22:
+[sam_kvm]
+10.10.215.22
 
-        app:
-          hosts:
-            10.10.215.3[0:2]:
+[sam_app]
+10.10.215.3[0:2]
 
-        coder:
-          hosts:
-            10.10.215.[35:40]:
+[sam_coder]
+10.10.215.[35:40]
 
-        db:
-          hosts:
-            10.10.215.4[3:4]:
+[sam_db]
+10.10.215.4[3:4]
 
-        wfe:
-          hosts:
-            10.10.215.41:
+[sam_wfe]
+10.10.215.41
 
-        solr:
-          hosts:
-            10.10.215.42:
+[sam_solr]
+10.10.215.42
 
-        web:
-          hosts:
-            10.10.215.3[3:4]:
-...            
+[sam_web]
+10.10.215.3[3:4]
+
+[rnb_dart]
+10.10.9.25
+10.10.9.27
+
+[rnb_wfe]
+10.10.9.26
+
+[rnb_solr]
+10.10.9.32
+10.10.9.34
+
+#[rnb_kvm]
+#10.10.9.39
+
+[rnb_app]
+10.10.9.4[0:1]
+10.10.9.4[7:9]
+
+[rnb_web]
+10.10.9.7[8:9]
+
+[rnb_tac]
+10.10.9.84
+
+[rnb_db]
+10.10.9.12[2:3]
+10.10.9.171
+10.10.9.173
+
+[rnb_coder]
+10.10.9.16[1:6]
